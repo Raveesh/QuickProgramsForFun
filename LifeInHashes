@@ -1,0 +1,25 @@
+package com.sample;
+
+import java.time.LocalDate;
+
+public class LifeTimeBox {
+	
+	public static final int LIFE_EXPECTANCY = 85;
+	public static final int AGE = 30;
+	public static final int LINEBREAK_YEAR= 52;
+	
+	public static void main(String[] args) {
+		LocalDate startDate = LocalDate.now();
+		System.out.printf("Start Date is %s \n",startDate);
+		LocalDate endDate = LocalDate.of(startDate.getYear()-AGE+LIFE_EXPECTANCY, startDate.getMonth(), startDate.getDayOfMonth());
+		System.out.printf("Start Date is %s \n",endDate);
+		int count =0;
+		for(LocalDate date = startDate;date.isBefore(endDate);date = date.plusWeeks(1)){
+			count=count+1;
+			System.out.printf("#");
+			if(count%LINEBREAK_YEAR ==0){
+				System.out.println(System.lineSeparator());
+			}
+		}
+	}
+}
