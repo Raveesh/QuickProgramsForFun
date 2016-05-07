@@ -1,0 +1,11 @@
+A quick and dirty example of using Mbeans for dynamically changing the logging of the application . 
+
+Inspired by the usecase that in production we generally have the loglevel at warn and suppose due to an issue, 
+we require info log level to be turned on without restarting the application in production .. 
+
+The sample program uses a Log4jMBean that is registered to the MBeanServer. When the program is first run, it prints only the 
+error logs . 
+
+Now turn on jconsole and go to the tab "MBeans" and open the package com.stellapps . There you can see the set logging level method 
+you can pass the 2 parameters of "com.stellapps" and "INFO" (without quotes) and on clicking the setLogging level, the propertyfile is 
+reloaded and you can now start seeing the info logs as well. 
