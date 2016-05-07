@@ -1,0 +1,13 @@
+1. In order to run the akka clustering java example, Build the project using Maven. 
+2. This will generate a akkaSample-allinone*.jar in the target folder
+3. Open the terminal and run the jar file using the following command 
+`java -Dcom.sun.management.jmxremote.port=9997 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -jar ../deploy/akkaSample-0.0.1-SNAPSHOT-allinone.jar`
+
+This will show that akka system is up on 3 ports 2551,2552 and a randomly selected port. 
+
+4. Open another terminal and run the following command
+`java -Dcom.sun.management.jmxremote.port=9997 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -jar ../deploy/akkaSample-0.0.1-SNAPSHOT-allinone.jar 2554`
+
+This will show that another akka system is up on 2554 and it has joined the previous cluster
+
+5. You can repeat this process on other terminal windows.
